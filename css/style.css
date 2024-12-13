@@ -1,0 +1,285 @@
+:root {
+  --primary: #000536;
+  --bg: #ffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: black;
+  min-height: 2400px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 7%;
+  background-color: var(--bg);
+  border: 1px solid #010101;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-nav a {
+  color: black;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 1.5rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #00047c;
+}
+
+.navbar .navbar-extra a {
+  color: rgb(7, 0, 108);
+  margin: 0 0.7rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #0a00c0;
+  transition: 0.5s linier;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero .content {
+  text-align: center;
+  padding: 1.5rem 7%;
+  max-height: 60rem;
+  margin: 0 auto;
+}
+
+.hero .content h1 {
+  color: #ffff;
+  font-size: 2rem;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hero .content h3 {
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #ffff;
+  line-height: 1.4;
+  font-weight: 300;
+  mix-blend-mode: difference;
+}
+
+.hero .content .btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  color: #fff;
+  background-color: #090019;
+  border-radius: 0.8rem;
+}
+
+/* Categories */
+.categories,
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 7rem;
+}
+
+.categories h1 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.categories .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.card {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  margin: 1.5rem 1.7rem 0.5rem;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card .card-image {
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px 15px 10px 10px;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card-content h2,
+h3 {
+  font-size: 1.2rem;
+}
+
+.card .card-content .item-detail-button,
+.buy-button {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  color: #fff;
+  background-color: #03002d;
+  border-radius: 0.8rem;
+}
+
+.card .card-content .item-detail-button,
+.buy-button:hover {
+  background-color: #0e0022;
+}
+
+/* About Us */
+
+/* Modal Box */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: black;
+  margin: 15% auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 40%;
+  animation: anaimatedModal 0.5s;
+}
+
+/* Modal Animation */
+@keyframes animatedModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-container .close-icon {
+  position: absolute;
+  right: 1rem;
+  color: #010101;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal-content img {
+  height: 15rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.modal-content a {
+  display: flex;
+  gap: 1rem;
+  width: 12rem;
+  color: #ffff;
+  margin-top: 1rem;
+  padding: 1rem 1.6rem;
+}
+
+/* Media Queries Rensponsif */
+#menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+
+  #menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #010101;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #fff;
+    display: block;
+    margin: 2rem;
+    padding: 0.5rem;
+    font-size: 1.7rem;
+  }
+
+  .modal-content {
+    flex-wrap: wrap;
+  }
+}
